@@ -1,0 +1,591 @@
+/* Wedding Invitation Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f7f7;
+    background-image: url('../images/background.svg');
+    background-size: 500px 500px;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+/* Loading Animation Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1s ease-out 3.5s forwards;
+}
+
+.dove-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.dove {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.2));
+}
+
+.dove-left {
+    left: -100px;
+    transform: translateY(-50%) scaleX(-1);
+    animation: flyFromLeft 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.dove-right {
+    right: -100px;
+    animation: flyFromRight 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.flash-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    animation: flash 0.5s ease-out 2.5s forwards;
+}
+
+@keyframes flyFromLeft {
+    0% {
+        left: -100px;
+    }
+    90% {
+        left: calc(50% - 125px);
+        opacity: 1;
+    }
+    100% {
+        left: calc(50% - 125px);
+        opacity: 0;
+    }
+}
+
+@keyframes flyFromRight {
+    0% {
+        right: -100px;
+    }
+    90% {
+        right: calc(50% - 125px);
+        opacity: 1;
+    }
+    100% {
+        right: calc(50% - 125px);
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    animation: revealSite 1s ease-out 3.8s forwards;
+}
+
+@keyframes revealSite {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e8d8c3;
+    position: relative;
+}
+
+header::before, header::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: #e8d8c3;
+    top: 100%;
+    left: 50%;
+}
+
+header::before {
+    transform: translateX(-125px);
+}
+
+header::after {
+    transform: translateX(25px);
+}
+
+.header-with-angels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+}
+
+.angel {
+    width: 50px;
+    height: auto;
+    margin: 0 15px;
+    opacity: 0.85;
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.2));
+}
+
+.angel-right {
+    animation: float-angel 5s ease-in-out infinite;
+}
+
+.angel-left {
+    transform: scaleX(-1); /* Flip horizontally */
+    animation: float-angel-left 5s ease-in-out infinite;
+    animation-delay: 2.5s; /* Offset animation */
+}
+
+@keyframes float-angel {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes float-angel-left {
+    0% {
+        transform: translateY(0) scaleX(-1);
+    }
+    50% {
+        transform: translateY(-5px) scaleX(-1);
+    }
+    100% {
+        transform: translateY(0) scaleX(-1);
+    }
+}
+
+.couple-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #d4a373;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 5;
+}
+
+.invitation-text {
+    font-size: 1.2rem;
+    color: #6c757d;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.countdown-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.bubble-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #fdf0d5, #d4a373);
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(212, 163, 115, 0.4),
+                inset 0 -5px 10px rgba(255, 255, 255, 0.5),
+                inset 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite alternate;
+}
+
+.countdown-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.countdown-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.countdown-item:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.countdown-item:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.countdown-item:hover {
+    transform: scale(1.05);
+}
+
+.countdown-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+}
+
+.countdown-item::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    top: 25px;
+    left: 28px;
+}
+
+.countdown-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    margin-top: 18px;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    color: white;
+    margin-top: 2px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes countdownPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 8px 20px rgba(212, 163, 115, 0.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.countdown-number.pulse {
+    animation: countdownPulse 0.5s ease-in-out;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #d4a373;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.event {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    border: 1px solid #e8d8c3;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+.date, .time {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #5a5a5a;
+}
+
+.location p {
+    margin: 5px 0;
+    color: #6c757d;
+}
+
+.location-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 15px;
+    background-color: #f8f4eb;
+    color: #d4a373;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    background-color: #d4a373;
+    color: white;
+}
+
+/* RSVP Form Styles */
+.rsvp {
+    background-color: #fbf8f3;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #5a5a5a;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e8d8c3;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c89b65;
+    transform: translateY(-3px);
+}
+
+/* Photo Gallery */
+.photos {
+    margin-top: 30px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.placeholder {
+    background-color: #f8f9fa;
+    padding: 80px;
+    border-radius: 5px;
+    color: #adb5bd;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 1px solid #e8d8c3;
+    margin-top: 20px;
+}
+
+.hashtag {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #d4a373;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 2.8rem;
+    }
+    
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .details {
+        flex-direction: column;
+    }
+    
+    .event {
+        margin-bottom: 20px;
+    }
+    
+    .angel {
+        width: 30px;
+        margin: 0 8px;
+    }
+    
+    .header-with-angels {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2.2rem;
+    }
+    
+    .angel {
+        width: 25px;
+        margin: 0 5px;
+    }
+    
+    /* Adjust dove positions for small screens */
+    @keyframes flyFromLeft {
+        0% {
+            left: -50px;
+        }
+        90% {
+            left: calc(50% - 75px);
+            opacity: 1;
+        }
+        100% {
+            left: calc(50% - 75px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes flyFromRight {
+        0% {
+            right: -50px;
+        }
+        90% {
+            right: calc(50% - 75px);
+            opacity: 1;
+        }
+        100% {
+            right: calc(50% - 75px);
+            opacity: 0;
+        }
+    }
+}

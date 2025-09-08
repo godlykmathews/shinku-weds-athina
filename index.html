@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Loading overlay with dove animation -->
+    <div class="loading-overlay">
+      <div class="dove-container">
+        <img src="images/angel.png" alt="Dove" class="dove dove-left" />
+        <div class="flash-effect"></div>
+        <img src="images/angel.png" alt="Dove" class="dove dove-right" />
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="header-with-angels">
+          <img src="images/angel.png" alt="Angel" class="angel angel-left" />
+          <h1 class="couple-names">Athina & Shinku</h1>
+          <img src="images/angel.png" alt="Angel" class="angel angel-right" />
+        </div>
+        <p class="invitation-text">
+          Together with their families, invite you to celebrate their marriage
+        </p>
+        <div class="countdown-container">
+          <div class="bubble-countdown">
+            <div class="countdown-grid">
+              <div class="countdown-item">
+                <span class="countdown-number" id="countdown-days">00</span>
+                <span class="countdown-label">days</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="countdown-hours">00</span>
+                <span class="countdown-label">hours</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="countdown-minutes">00</span>
+                <span class="countdown-label">mins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="details">
+        <div class="event wedding">
+          <h2>Wedding Ceremony</h2>
+          <div class="date">October 30, 2025</div>
+          <div class="time">10:00 AM</div>
+          <div class="location">
+            <p>St. Simons Knanaya Church</p>
+            <p>Puthusserri</p>
+            <a
+              href="https://maps.app.goo.gl/XdQSFEzn9tmr5wkY6"
+              target="_blank"
+              class="location-link"
+              >View Map</a
+            >
+          </div>
+        </div>
+
+        <div class="event engagement">
+          <h2>Engagement Ceremony</h2>
+          <div class="date">October 22, 2025</div>
+          <div class="time">5:00 PM</div>
+          <div class="location">
+            <p>St Gregorious Knanaya Church</p>
+            <p>&nbsp;</p>
+            <a
+              href="https://maps.app.goo.gl/yffNb81Wn7cB56Ub6"
+              target="_blank"
+              class="location-link"
+              >View Map</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp">
+        <h2>RSVP</h2>
+        <p>Please let us know if you can attend by October 10, 2025</p>
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="attending">Will you be attending?</label>
+            <select id="attending" name="attending" required>
+              <option value="">Please select</option>
+              <option value="yes">Joyfully Accept</option>
+              <option value="no">Regretfully Decline</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <input type="number" id="guests" name="guests" min="0" max="5" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message to the Couple</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit RSVP</button>
+        </form>
+      </section>
+
+      <section class="photos">
+        <h2>Our Story</h2>
+        <div class="photo-gallery">
+          <div class="placeholder">Photos coming soon</div>
+        </div>
+      </section>
+
+      <footer>
+        <p>We can't wait to celebrate with you!</p>
+        <p class="hashtag">#ForeverTogether</p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
