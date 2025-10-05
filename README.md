@@ -1,79 +1,36 @@
-# Wedding Invitation Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is a simple, elegant wedding invitation website created for your sister's wedding. The website allows guests to view wedding details and RSVP online.
+## Getting Started
 
-## Features
+First, run the development server:
 
-- Responsive design that works on mobile, tablet, and desktop
-- Wedding and engagement ceremony details with date, time, and location
-- Interactive maps for ceremony locations
-- RSVP form with data storage
-- Admin page to view RSVP responses
-- Countdown timer to the wedding day
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## File Structure
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- `index.html` - The main invitation page
-- `location.html` - Page with maps and directions
-- `admin.html` - Admin page to view RSVPs
-- `css/style.css` - All styling for the website
-- `js/script.js` - JavaScript functionality
-- `images/` - Directory for images
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## How to Use
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-1. **Customize the Content:**
+## Learn More
 
-   - Open `index.html` and update the names, dates, and locations
-   - Modify the style in `css/style.css` if you want to change colors or layout
+To learn more about Next.js, take a look at the following resources:
 
-2. **Update Maps:**
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-   - In `location.html`, replace the Google Maps iframe src URLs with actual addresses
-   - Update the "Get Directions" links with real addresses
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-3. **Deployment:**
-   - Upload all files to a web hosting service
-   - Share the URL with wedding guests
+## Deploy on Vercel
 
-## Data Storage
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-The RSVP information is currently stored in the browser's localStorage. For a production site, you would want to:
-
-1. Set up a server to receive and store RSVP data
-2. Modify the JavaScript to send data to your server
-3. Set up proper authentication for the admin page
-
-## Browser Compatibility
-
-This website works in all modern browsers including:
-
-- Chrome
-- Firefox
-- Safari
-- Edge
-
-## Customization Tips
-
-1. **Change Colors:**
-
-   - The main color scheme is defined in `css/style.css`
-   - The primary accent color is `#d4a373`
-
-2. **Add Photos:**
-
-   - Replace the "Photos coming soon" placeholder in the Our Story section
-   - Add real photos of the couple in a grid layout
-
-3. **Change Fonts:**
-   - The website uses Google Fonts
-   - Headings: 'Dancing Script'
-   - Body text: 'Montserrat'
-
-## Local Testing
-
-To test the website locally, simply open the `index.html` file in a web browser.
-
----
-
-Designed with ❤️ for your sister's wedding
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
